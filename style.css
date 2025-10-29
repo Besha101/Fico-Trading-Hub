@@ -293,3 +293,58 @@ body.home-page main{
   -moz-user-select: none;
   -ms-user-select: none;
 }
+/* ====== HOME PAGE BACKGROUND IMAGES (širi fade prema unutra) ====== */
+body.home-page::before,
+body.home-page::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  width: 30vw;                /* širina slike — možeš smanjiti na 25vw ako želiš užu */
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 0.45;              /* jačina slike */
+  pointer-events: none;
+}
+
+/* Lijeva slika – fade prema unutra (ka centru stranice) */
+body.home-page::before {
+  left: 0;
+  background-image: url("/images/FicoSlika1.jpg"); /* zamijeni svojom slikom */
+  mask-image: linear-gradient(
+    to left,
+    transparent 0%,         /* centar čist */
+    rgba(0, 0, 0, 0.6) 65%, /* sredina fade zone */
+    black 95%,              /* rub potpuno zatamnjen */
+    black 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to left,
+    transparent 0%,
+    rgba(0, 0, 0, 0.6) 65%,
+    black 95%,
+    black 100%
+  );
+}
+
+/* Desna slika – fade prema unutra (ka centru stranice) */
+body.home-page::after {
+  right: 0;
+  background-image: url("/images/FicoSlika.jpg"); /* zamijeni svojom slikom */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.6) 65%,
+    black 95%,
+    black 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.6) 65%,
+    black 95%,
+    black 100%
+  );
+}
