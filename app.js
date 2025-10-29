@@ -16,7 +16,10 @@ document.querySelector('.join-form')?.addEventListener('submit', (e)=>{
 });
 
 // Godina u footeru
-document.getElementById('year')?.textContent = new Date().getFullYear();
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('year').textContent = new Date().getFullYear();
+});
+
 
 /* === Auto ACTIVE link u glavnom meniju ===
    Ukloni ručni class="active" iz HTML-a; ovaj kod će ga postaviti za tekuću stranicu. */
