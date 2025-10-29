@@ -7,15 +7,26 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- NAVBAR (isti kao index.html) -->
   <header class="site-header">
     <div class="container nav-wrap">
-      <a href="index.html" class="brand"><img src="/images/transparentnost_loga.png" alt="Logo" class="logo"/></a>
+
+      <a href="index.html" class="brand">
+        <div class="logo-wrap">
+          <img src="/images/transparentnost_loga.png" alt="Logo" class="logo">
+          <span class="logo-text">Fico Trading Hub</span>
+        </div>
+      </a>
+
       <nav class="main-nav">
-        <a href="plans.html" class="active">Plans</a>
+        <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="discord.html">Join Discord</a>
+        <a href="plans.html" class="active">Plans</a>
       </nav>
-      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+
+      <a href="https://discord.gg/your-discord-link" target="_blank" class="btn pill">Join Discord</a>
+
+      <button class="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -24,7 +35,8 @@
   <main class="page-top-pad">
     <section class="section container">
       <h2>Our Plans</h2>
-      <p>Choose the perfect plan that suits your trading journey.</p>
+      <p>Izlistaj planove i pogodnosti.</p>
+
       <div class="plans-grid">
         <div class="plan-card"><h3>Starter</h3><p>Community + osnove.</p><span class="price">$19/mo</span></div>
         <div class="plan-card"><h3>Pro</h3><p>Napredne lekcije + live.</p><span class="price">$49/mo</span></div>

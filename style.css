@@ -7,6 +7,8 @@
   --gold: #c4a24c;
   --accent: var(--gold);
   --maxw: 1200px;
+    --headerH: 70px;   /* visina headera (koliko imaš u .nav-wrap) */
+  --footerH: 72px;   /* približna visina footera (možeš korigovati 64–80) */
 }
 
 /* ====== Reset / Base ====== */
@@ -24,6 +26,11 @@ body{
   background: radial-gradient(1200px 600px at 50% 90%, #101419 0%, #0c1116 40%, var(--dark) 100%);
   font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
+
+body.home-page {
+  overflow: hidden; /* onemogućava scroll */
+}
+
 main{ flex:1 0 auto; }            /* gura footer na dno */
 img{ display:block; max-width:100%; }
 a{ color:inherit; text-decoration:none; }
@@ -40,11 +47,13 @@ a{ color:inherit; text-decoration:none; }
 .nav-wrap {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* da se logo i nav razdvoje */
-  padding: 10px 0;
-  height: 70px;
+  justify-content: center; /* centrira sve unutar headera */
   position: relative;
+  height: 70px;
+  padding: 10px 0;
 }
+
+
 
 
 .logo {
@@ -53,28 +62,65 @@ a{ color:inherit; text-decoration:none; }
   flex-shrink: 0; /* da ne skuplja meni */
 }
 
+.logo-wrap {
+  display: flex;
+  align-items: center; /* poravnava tekst sa sredinom loga */
+  gap: 1px; /* još manji razmak između loga i teksta */
+  transform: translateY(0px); /* blago podignuto gore */
+}
 
-.brand{ display:flex; align-items:center; }
+.logo-text {
+  font-size: 13px;
+  color: var(--gold);
+  font-weight: 600;
+  margin-left: -7px; /* još bliže logou */
+  margin-top: 11px;
+  letter-spacing: 0.3px;
+}
+
+
+
+
+
+.brand {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
 .main-nav {
   display: flex;
   gap: 24px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.main-nav a{ font-weight:500; opacity:.9; transition: opacity .2s, color .2s; }
-.main-nav a:hover{ opacity:1; color: var(--gold); }
-.main-nav .active{ color: var(--gold); }
-.btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  padding: 10px 18px; border-radius: 999px; font-weight:700;
-  background: var(--accent); color: #14120a; border: 0;
-  box-shadow: 0 0 0 1px rgba(0,0,0,.25) inset, 0 6px 18px rgba(196,162,76,.18);
-  transition: transform .08s ease, filter .2s ease, box-shadow .2s ease;
+.main-nav a {
+  font-weight: 500;
+  opacity: .9;
+  transition: opacity .2s, color .2s;
 }
-.btn:hover{ filter: brightness(1.06); transform: translateY(-1px); }
-.btn.pill{ padding: 14px 28px; letter-spacing:.3px; }
+.main-nav a:hover {
+  opacity: 1;
+  color: var(--gold);
+}
+.main-nav .active {
+  color: var(--gold);
+}
+/* Bazni izgled svih pill dugmadi (bez pozicioniranja) */
+.btn.pill {
+  background: var(--gold);
+  color: #14120a;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform .1s ease, filter .2s ease;
+}
+.btn.pill:hover {
+  filter: brightness(1.1);
+  transform: scale(1.03);
+}
+
 .hamburger{ display:none; background:none; border:0; width:42px; height:42px; position:relative; }
 .hamburger span{ position:absolute; left:10px; right:10px; height:2px; background:#ddd; transition:.2s; }
 .hamburger span:nth-child(1){ top:12px; }
@@ -96,6 +142,10 @@ a{ color:inherit; text-decoration:none; }
   color: #fff8e0; text-shadow: 0 6px 40px rgba(0,0,0,.6);
 }
 .sub{ margin: 0 auto 26px auto; max-width: 900px; color:#e6dcc4; font-size: clamp(16px, 1.6vw, 20px); }
+.hero-btn {
+  display: inline-flex;
+  margin-top: 18px; /* razmak ispod teksta */
+}
 
 
 /* ====== Sekcije (unutrašnje stranice) ====== */
@@ -136,5 +186,32 @@ a{ color:inherit; text-decoration:none; }
   .site-header.open .main-nav{ display:flex; }
   .hamburger{ display:block; margin-left:auto; }
 }
+
+/* Samo Discord dugme u headeru neka bude apsolutno desno */
+.site-header .btn.pill {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.site-header .btn.pill:hover {
+  transform: translateY(-50%) scale(1.03);
+}
+
+/* Home: bez scrolla, hero zauzima prostor između headera i footera */
+body.home-page .hero{
+  min-height: calc(100vh - var(--headerH) - var(--footerH));
+  padding-top: 0;                     /* više ne treba 100px */
+  display: grid; 
+  place-items: center;                /* centriraj sadržaj vertikalno */
+}
+
+body.home-page main{
+  /* ovo je opcionalno, pomaže ako imaš dodatne sekcije u mainu */
+  min-height: calc(100vh - var(--headerH) - var(--footerH));
+}
+
+/* Ako ti hero naslov upada ispod headera, možeš dodati malo razmaka odozgo: */
+/* body.home-page .hero .hero-inner{ margin-top: 10px; } */
 
 
