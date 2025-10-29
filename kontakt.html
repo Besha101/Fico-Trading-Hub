@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fico Trading Hub — Kontakt</title>
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Minimalni stilovi za Contact “karticu” (zadržano tvoje, samo bez body centriranja) -->
+  <style>
+    :root{ --dark:#0b0f14; --text:#eeeeee; --gold:#c4a24c; }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+
+    /* Umjesto centriranja cijelog <body>, koristimo .page kao na drugim stranicama */
+    .contact-page {
+      padding-top: 120px;                /* ispod fiksnog headera */
+      padding-bottom: 80px;              /* iznad footera */
+      min-height: calc(100svh - var(--headerH) - var(--footerH));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-wrap{
+      position:relative; width:min(95%, 820px); min-height:340px;
+      background:#0f141b; border:1px solid rgba(196,162,76,.35); border-radius:18px;
+      box-shadow:0 18px 45px rgba(0,0,0,.45); overflow:hidden;
+      display:flex; align-items:center; gap:48px; padding:36px 42px;
+    }
+
+    /* Watermark logo (blur + niska opacity) */
+    .watermark{
+      position:absolute; right:24px; top:50%; transform:translateY(-50%);
+      width:320px; max-width:40%; opacity:.08; filter:blur(10px);
+      pointer-events:none; user-select:none;
+    }
+
+    .left{ flex:1; position:relative; z-index:2; }
+    h1{margin:0 0 14px; color:var(--gold); font-size:1.8rem}
+    p.sub{margin:0 0 24px; color:#cfc7b0}
+
+    .item{margin:14px 0; display:flex; gap:12px; align-items:center}
+    .label{color:var(--gold); font-weight:600; width:130px}
+    .value a, .value{color:#e9e9e9; text-decoration:none}
+    .value a:hover{color:var(--gold)}
+
+    /* Telegram badge desno */
+    .tg-badge{
+      position:absolute; right:26px; top:26px; z-index:2; opacity:.9;
+      display:flex; align-items:center; gap:10px;
+      background:#0b0f14; padding:8px 12px; border:1px solid rgba(196,162,76,.35);
+      border-radius:12px;
+    }
+    .tg-badge span{font-weight:600; color:#e9e9e9}
+    .tg-icon{width:22px; height:22px; display:block}
+
+    @media (max-width:760px){
+      .contact-wrap{gap:24px; padding:28px}
+      .watermark{width:220px; right:-20px}
+      .label{width:110px}
+      .tg-badge{right:18px; top:18px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fiksni header (ostaje isti na svim stranicama) -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <div class="logo-wrap">
+          <img src="/images/transparentnost_loga.png" alt="Logo" class="logo">
+          <span class="logo-text">Fico Trading Hub</span>
+        </div>
+      </a>
+
+      <!-- Uklonili smo ručni class="active"; JS će ga automatski postaviti -->
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="plans.html">Plans</a>
+        <a href="kontakt.html">Contact</a>
+      </nav>
+
+      <a href="https://discord.gg/DSs3pgTQ" target="_blank" class="btn pill">Join Discord</a>
+
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Sadržaj kontakt stranice -->
+  <main class="contact-page">
+    <div class="contact-wrap">
+      <!-- mala Telegram ikonica/badge -->
+      <a class="tg-badge" href="https://t.me/ficotradinghub" target="_blank" rel="noopener">
+        <!-- Telegram SVG ikona -->
+        <svg class="tg-icon" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#2AABEE"/><stop offset="1" stop-color="#229ED9"/></linearGradient></defs>
+          <circle cx="120" cy="120" r="120" fill="url(#g)"/>
+          <path fill="#fff" d="M178 79c3-12-4-10-12-7l-110 42c-7 3-7 8-1 10l28 9 11 36c2 6 4 7 8 3l17-16 29 21c5 3 9 1 10-5l20-92zM95 136l60-47c3-2 2-3-1-1l-67 42-1 6 9 0z"/>
+        </svg>
+        <span>Telegram</span>
+      </a>
+
+      <!-- lijevi blok s podacima -->
+      <div class="left">
+        <h1>Kontakt informacije</h1>
+        <p class="sub">Slobodno nas kontaktiraj putem emaila, telefona ili Discorda.</p>
+
+        <div class="item">
+          <div class="label">Email</div>
+          <div class="value"><a href="mailto:ficotradinghub@gmail.com">ficotradinghub@gmail.com</a></div>
+        </div>
+
+        <div class="item">
+          <div class="label">Broj telefona</div>
+          <div class="value"><a href="tel:+385998683347">+385 99 8683 347</a></div>
+        </div>
+
+        <div class="item">
+  <div class="label">Discord ime</div>
+  <div class="value">
+    <a href="https://discord.com/users/387958772347437058" target="_blank">IamFico#2477</a>
+  </div>
+</div>
+
+      </div>
+
+      <!-- blurani watermark logo (ispravljena navodnica) -->
+      <img class="watermark" src="/images/transparentnost_loga.png" alt="Fico Trading Hub Logo">
+    </div>
+  </main>
+
+  <!-- Footer dodat (isti kao na ostalim stranicama) -->
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> Fico Trading Hub. All rights reserved.</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

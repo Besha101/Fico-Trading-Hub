@@ -3,14 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fico Trading Hub — Plans</title>
+  <title>Fico Trading Hub — Planovi</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- NAVBAR (isti kao index.html) -->
+<body class="plans-page">
   <header class="site-header">
     <div class="container nav-wrap">
-
       <a href="index.html" class="brand">
         <div class="logo-wrap">
           <img src="/images/transparentnost_loga.png" alt="Logo" class="logo">
@@ -22,30 +20,40 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="plans.html" class="active">Plans</a>
+        <a href="kontakt.html">Contact</a>
       </nav>
 
-      <a href="https://discord.gg/your-discord-link" target="_blank" class="btn pill">Join Discord</a>
-
-      <button class="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="https://discord.gg/DSs3pgTQ" target="_blank" class="btn pill">Join Discord</a>
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </header>
 
-  <main class="page-top-pad">
-    <section class="section container">
-      <h2 style="text-align: center;">Our Plans</h2>
-      <h5 style="text-align: center;">Izaberi svoj plan.</h5>
+  <!-- bez page-top-pad, sve rješava CSS za .plans-page -->
+  <main>
+    <section class="section container plans-section">
+      <h2 class="plans-title">Planovi</h2>
+      <h5 class="plans-sub">Izaberi svoj plan</h5>
 
+      <div class="plans-flex">
+        <div class="plan">
+          <h3>Trading Circle</h3>
+          <br>
+          <p>Svakodnevne analize marketa + community</p>
+          <a href="payment.html" class="cta">€65/Month</a>
+        </div>
 
-      <div class="plans-grid">
-        <div class="plan-card"><h3>Vip grupa</h3><p>Community + osnove.</p> <a href="payment.html"><span class="price">$65/Month</span></a>
+        <div class="plan">
+          <h3>One-to-One Mentorship</h3>
+          <br>
+          <p>Individualni program prilagođen tvom tempu</p>
+          <a href="payment.html" class="cta">€100/Hour</a>
+        </div>
 
-
-</span></div>
-        <div class="plan-card"><h3>Kurs</h3><p>Napredne lekcije + live.</p><a href="payment.html"><span class="price">$300/OneTimePayment</span></a>
-
-
+        <div class="plan">
+          <h3>Smart Money (Approach) to Trading</h3>
+          <p>Kompletan tečaj koji te vodi od osnova do naprednog Smart Money pristupa!</p>
+          <a href="payment.html" class="cta">€700/Month</a>
+        </div>
       </div>
     </section>
   </main>
@@ -53,6 +61,7 @@
   <footer class="footer">
     <div class="container">© <span id="year"></span> Fico Trading Hub. All rights reserved.</div>
   </footer>
+
   <script src="app.js"></script>
 </body>
 </html>

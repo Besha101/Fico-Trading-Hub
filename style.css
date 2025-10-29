@@ -7,8 +7,8 @@
   --gold: #c4a24c;
   --accent: var(--gold);
   --maxw: 1200px;
-    --headerH: 70px;   /* visina headera (koliko imaš u .nav-wrap) */
-  --footerH: 72px;   /* približna visina footera (možeš korigovati 64–80) */
+  --headerH: 70px;   /* visina headera */
+  --footerH: 72px;   /* približna visina footera */
 }
 
 /* ====== Reset / Base ====== */
@@ -16,10 +16,9 @@
 html, body { height: 100%; }
 html { scroll-behavior: smooth; }
 
-/* Sticky footer layout */
 body{
   margin:0;
-  min-height:100svh;              /* viewport visina (bolje na mob.) */
+  min-height:100svh;
   display:flex;
   flex-direction:column;
   color: var(--text);
@@ -27,11 +26,9 @@ body{
   font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-body.home-page {
-  overflow: hidden; /* onemogućava scroll */
-}
+body.home-page { overflow: hidden; }
 
-main{ flex:1 0 auto; }            /* gura footer na dno */
+main{ flex:1 0 auto; }
 img{ display:block; max-width:100%; }
 a{ color:inherit; text-decoration:none; }
 .container{ width: min(92%, var(--maxw)); margin-inline:auto; }
@@ -47,67 +44,23 @@ a{ color:inherit; text-decoration:none; }
 .nav-wrap {
   display: flex;
   align-items: center;
-  justify-content: center; /* centrira sve unutar headera */
+  justify-content: center;
   position: relative;
   height: 70px;
   padding: 10px 0;
 }
 
+.logo { height: 50px; width: auto; flex-shrink: 0; }
+.logo-wrap { display: flex; align-items: center; gap: 1px; transform: translateY(0px); }
+.logo-text { font-size: 13px; color: var(--gold); font-weight: 600; margin-left: -7px; margin-top: 11px; letter-spacing: .3px; }
 
+.brand { position: absolute; left: 0; top: 50%; transform: translateY(-50%); }
+.main-nav { display: flex; gap: 24px; margin-left: auto; margin-right: auto; }
+.main-nav a { font-weight: 500; opacity: .9; transition: opacity .2s, color .2s; }
+.main-nav a:hover { opacity: 1; color: var(--gold); }
+.main-nav .active { color: var(--gold); }
 
-
-.logo {
-  height: 50px; /* veći logo */
-  width: auto;
-  flex-shrink: 0; /* da ne skuplja meni */
-}
-
-.logo-wrap {
-  display: flex;
-  align-items: center; /* poravnava tekst sa sredinom loga */
-  gap: 1px; /* još manji razmak između loga i teksta */
-  transform: translateY(0px); /* blago podignuto gore */
-}
-
-.logo-text {
-  font-size: 13px;
-  color: var(--gold);
-  font-weight: 600;
-  margin-left: -7px; /* još bliže logou */
-  margin-top: 14px;
-  letter-spacing: 0.3px;
-}
-
-
-
-
-
-.brand {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.main-nav {
-  display: flex;
-  gap: 24px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.main-nav a {
-  font-weight: 500;
-  opacity: .9;
-  transition: opacity .2s, color .2s;
-}
-.main-nav a:hover {
-  opacity: 1;
-  color: var(--gold);
-}
-.main-nav .active {
-  color: var(--gold);
-}
-/* Bazni izgled svih pill dugmadi (bez pozicioniranja) */
+/* Dugme */
 .btn.pill {
   background: var(--gold);
   color: #14120a;
@@ -116,10 +69,7 @@ a{ color:inherit; text-decoration:none; }
   font-weight: 700;
   transition: transform .1s ease, filter .2s ease;
 }
-.btn.pill:hover {
-  filter: brightness(1.1);
-  transform: scale(1.03);
-}
+.btn.pill:hover { filter: brightness(1.1); transform: scale(1.03); }
 
 .hamburger{ display:none; background:none; border:0; width:42px; height:42px; position:relative; }
 .hamburger span{ position:absolute; left:10px; right:10px; height:2px; background:#ddd; transition:.2s; }
@@ -139,20 +89,16 @@ a{ color:inherit; text-decoration:none; }
 .hero h1{
   margin:0 0 18px 0;
   font-size: clamp(38px, 6vw, 64px); line-height: 1.05; font-weight: 800; letter-spacing:.5px;
-  color: #fff8e0; text-shadow: 0 6px 40px rgba(0,0,0,.6);
+  color: #b3b3b3; text-shadow: 0 6px 40px rgba(0,0,0,.6);
 }
 .sub{ margin: 0 auto 26px auto; max-width: 900px; color:#e6dcc4; font-size: clamp(16px, 1.6vw, 20px); }
-.hero-btn {
-  display: inline-flex;
-  margin-top: 18px; /* razmak ispod teksta */
-}
-
+.hero-btn { display: inline-flex; margin-top: 18px; }
 
 /* ====== Sekcije (unutrašnje stranice) ====== */
 .page-top-pad{ padding-top: 96px; } /* da sadržaj ne ide ispod headera */
 .section{ padding: 90px 0; }
 .section h2{ color:#ffeab0; font-size: clamp(24px, 3vw, 36px); margin:0 0 12px 0; }
-.section p{ color:#e3d8b7; max-width:800px; }
+.section p{ color:#e3d8b7; max-width:800px; margin-top: 20px;}
 
 /* Plans grid demo */
 .plans-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap:18px; margin-top:18px; }
@@ -179,7 +125,7 @@ a{ color:inherit; text-decoration:none; }
   text-align:center;
 }
 
-/* ====== Responsive ====== */
+/* ====== Responsive nav ====== */
 @media (max-width: 980px){
   .main-nav{ display:none; position:absolute; top:64px; left:0; right:0; 
     background: rgba(5,8,11,.97); padding:14px 24px; flex-direction:column; gap:16px; }
@@ -187,31 +133,163 @@ a{ color:inherit; text-decoration:none; }
   .hamburger{ display:block; margin-left:auto; }
 }
 
-/* Samo Discord dugme u headeru neka bude apsolutno desno */
+/* Discord dugme desno u headeru */
 .site-header .btn.pill {
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
 }
-.site-header .btn.pill:hover {
-  transform: translateY(-50%) scale(1.03);
-}
+.site-header .btn.pill:hover { transform: translateY(-50%) scale(1.03); }
 
-/* Home: bez scrolla, hero zauzima prostor između headera i footera */
+/* Home: bez scrolla */
 body.home-page .hero{
   min-height: calc(100vh - var(--headerH) - var(--footerH));
-  padding-top: 0;                     /* više ne treba 100px */
-  display: grid; 
-  place-items: center;                /* centriraj sadržaj vertikalno */
+  padding-top: 0;
+  display: grid;
+  place-items: center;
 }
-
 body.home-page main{
-  /* ovo je opcionalno, pomaže ako imaš dodatne sekcije u mainu */
   min-height: calc(100vh - var(--headerH) - var(--footerH));
 }
 
-/* Ako ti hero naslov upada ispod headera, možeš dodati malo razmaka odozgo: */
-/* body.home-page .hero .hero-inner{ margin-top: 10px; } */
+/* ====== ABOUT ====== */
+/* Layout i visina sekcije */
+/* ====== ABOUT (precizno bez scrolla) ====== */
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  position: relative;
+
+  /* tačno između headera i footera */
+  height: calc(100vh - var(--headerH) - var(--footerH));
+  margin-top: var(--headerH);
+  padding: 0;
+  overflow: hidden;
+}
+
+/* već imaš ovo, ostavi: uklanja default padding sekcija */
+.section.about-section { padding: 0; }
 
 
+/* ukloni padding iz .section specifično za About da ne stvara scroll */
+.section.about-section { padding: 0; }
+
+.about-text { flex: 1; z-index: 1; }
+.about-text h2 { color: var(--gold); margin-bottom: 16px; }
+.about-text p { color: #e3d8b7; line-height: 1.6; margin: 0 0 14px; }
+
+.about-image {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 3px solid var(--gold); /* dodan zlatni okvir */
+  box-shadow: 0 0 20px rgba(196,162,76,0.3); /* blagi sjaj */
+}
+
+
+/* CLEAN fade s lijeve strane preko CSS MASKE (radi i na Chromium/Safari) */
+.about-image img {
+  width: 100%;
+  height: 85%;              /* smanji visinu slike */
+  object-fit: cover;
+  border-radius: 16px;
+  margin-top: -5%;           /* pomjeri je malo gore ako želiš balans */
+
+
+}
+
+/* Fallback ako mask-image nije podržan: nježan overlay */
+@supports not ((-webkit-mask-image: linear-gradient(#000, #000)) or (mask-image: linear-gradient(#000, #000))) {
+  .about-image::before{
+    content:"";
+    position:absolute;
+    inset:0 auto 0 0;
+    width: 46%;
+    background: linear-gradient(to right, rgba(11,15,20,1) 0%, rgba(11,15,20,.6) 30%, rgba(11,15,20,0) 100%);
+    pointer-events:none;
+    border-top-left-radius:16px;
+    border-bottom-left-radius:16px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .about-section{ flex-direction: column; gap: 28px; min-height: auto; }
+  .section.about-section{ padding: 56px 0; }
+}
+
+
+/* ====== PLANS ====== */
+.plans-section {
+  text-align: center;
+}
+
+.plans-flex {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.plan {
+  background: linear-gradient(180deg, #0f1318, #0b0f14);
+  border: 2px solid var(--gold);
+  border-radius: 16px;
+  padding: 30px 24px;
+  flex: 1 1 300px;
+  max-width: 360px;
+  box-shadow: 0 0 20px rgba(196,162,76,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px rgba(196,162,76,0.35);
+}
+
+.plan h3 {
+  color: var(--gold);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.plan p {
+  color: #e3d8b7;
+  min-height: 60px;
+  margin-bottom: 20px;
+}
+
+.plan .cta {
+  display: inline-block;
+  background: var(--gold);
+  color: #111;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.plan .cta:hover {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+.plans-title {
+  text-align: center;
+  color: var(--gold);
+  font-size: clamp(28px, 3vw, 42px);
+  margin-bottom: 8px;
+}
+/* ====== Onemogući selektovanje teksta u planovima ====== */
+.plans-flex, 
+.plans-flex * {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
