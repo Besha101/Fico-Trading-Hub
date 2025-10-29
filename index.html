@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finance — Home</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand" aria-label="Go to Home">
+        <img src="logo.png" alt="Logo" class="logo"/>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#plans">Plans</a>
+        <a href="#about">About</a>
+        <a href="#discord">Join Discord</a>
+      </nav>
+
+      <a href="#community" class="btn cta">Join Community</a>
+
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="smoke"></div>
+    <div class="hero-inner container">
+      <p class="eyebrow">Two Solutions.</p>
+      <h1><span>UNLIMITED OPPORTUNITY.</span></h1>
+      <p class="sub">
+        Your comprehensive gateway to mastering the markets, with an optimised
+        community and education on technicals, strategy building, and trading psychology.
+      </p>
+      <button id="learnMore" class="btn pill">LEARN MORE…</button>
+    </div>
+  </section>
+
+  <!-- Sekcije koje ostaju -->
+  <section id="about" class="section container">
+    <h2>About</h2>
+    <p>Dodaj ovdje svoju priču, misiju i vrijednosti.</p>
+  </section>
+
+  <section id="plans" class="section container">
+    <h2>Plans</h2>
+    <p>Paketi, pogodnosti, cijene.</p>
+  </section>
+
+  <section id="discord" class="section container">
+    <h2>Join Discord</h2>
+    <p>Uđi u naš Discord za dnevne analize i zajednicu.</p>
+    <a class="btn pill" href="https://discord.com/invite/your-code" target="_blank" rel="noopener">Open Discord</a>
+  </section>
+
+  <section id="community" class="section container join">
+    <h2>Join Community</h2>
+    <form class="join-form">
+      <input type="email" placeholder="Enter your email" required/>
+      <button type="submit" class="btn">Join Now</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> Finance. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
