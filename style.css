@@ -52,7 +52,7 @@ a{ color:inherit; text-decoration:none; }
 
 .logo { height: 50px; width: auto; flex-shrink: 0; }
 .logo-wrap { display: flex; align-items: center; gap: 1px; transform: translateY(0px); }
-.logo-text { font-size: 13px; color: var(--gold); font-weight: 600; margin-left: -7px; margin-top: 11px; letter-spacing: .3px; }
+.logo-text { font-size: 13px; color: var(--gold); font-weight: 600; margin-left: -7px; margin-top: 0px; letter-spacing: .3px; }
 
 .brand { position: absolute; left: 0; top: 50%; transform: translateY(-50%); }
 .main-nav { display: flex; gap: 24px; margin-left: auto; margin-right: auto; }
