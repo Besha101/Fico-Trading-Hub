@@ -1,6 +1,6 @@
 # 🌐 FICO Trading Hub
 
-Live demo: [ficotradinghub.netlify.app](https://ficotradinghub.netlify.app)
+Live demo: [ficotradinghub.com](https://ficotradinghub-com.vercel.app/)
 
 FICO Trading Hub je jednostavna, responzivna **statička web stranica** izrađena pomoću **HTML**, **CSS** i **JavaScript**.  
 Ona predstavlja moderan dizajn i osnovnu funkcionalnost za prikaz ponude, planova, plaćanja i kontakta.
