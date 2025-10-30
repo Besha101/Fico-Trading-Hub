@@ -294,3 +294,16 @@ body.home-page main{
   -ms-user-select: none;
 }
 
+.value .tg-inline {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 5px;
+}
+.value .tg-inline .tg-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+.value .tg-inline:hover .tg-icon {
+  transform: scale(1.15);
+}
