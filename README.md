@@ -15,16 +15,16 @@ Sva prava zadržana © 2025 Besha.
 
 ---
 
-📁 FICO Trading Hub
-│
-├── index.html          # Početna stranica
-├── about.html          # O nama / kompaniji
-├── plans.html          # Planovi i paketi
-├── payment.html        # Informacije o plaćanju
-├── kontakt.html        # Kontakt forma / informacije
-├── style.css           # Globalni stilovi
-├── app.js              # Interaktivnost i funkcionalnost
-└── images/             # Slike i ikone
+## 📁 Struktura projekta
+
+├── index.html         <br>
+├── about.html          <br>
+├── plans.html           <br>
+├── payment.html         <br>
+├── kontakt.html        <br>
+├── style.css           <br>
+├── app.js               <br>
+└── images/             <br>
 
 
 ---
